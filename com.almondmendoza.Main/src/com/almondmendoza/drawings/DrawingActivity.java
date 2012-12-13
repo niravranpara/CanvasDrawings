@@ -140,9 +140,12 @@ public class DrawingActivity extends Activity implements View.OnTouchListener{
             currentDrawingPath.path = new Path();
             currentDrawingPath.path.moveTo(motionEvent.getX(), motionEvent.getY());
             currentDrawingPath.path.lineTo(motionEvent.getX(), motionEvent.getY());
+            drawingSurface.addDrawingPath(currentDrawingPath);
+            
 
         }else if(motionEvent.getAction() == MotionEvent.ACTION_MOVE){
             currentDrawingPath.path.lineTo(motionEvent.getX(), motionEvent.getY());
+            drawingSurface.addDrawingPath(currentDrawingPath);
 
         }else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
             currentDrawingPath.path.lineTo(motionEvent.getX(), motionEvent.getY());
